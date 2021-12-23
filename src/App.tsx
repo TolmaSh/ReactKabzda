@@ -8,14 +8,14 @@ function App() {
     return (
         <div className="App">
             <h1>I`m Title your App</h1>
-            <Rating value={4}/>
-            <Rating value={3}/>
-            <Rating value={1}/>
-            <Rating value={0}/>
+            <Rating defaultValue={4}/>
+            <Rating defaultValue={3}/>
+            <Rating defaultValue={1}/>
+            <Rating defaultValue={0}/>
             <hr/>
-            <Accordion title={'Menu'} collapsed={false}/>
+            <Accordion title={'Menu'} />
             <hr/>
-            <Accordion title={'Users'} collapsed={true}/>
+            <Accordion title={'Users'} />
             <hr/>
             <Switch/>
         </div>
