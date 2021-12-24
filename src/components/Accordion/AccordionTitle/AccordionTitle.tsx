@@ -9,5 +9,5 @@ const AccordionTitleStyle = {
 }
 
 export const AccordionTitle: React.FC<AccordionTitleType> = ({title, onClickHandler}) => {
-  return <h3 onClick={onClickHandler} style={AccordionTitleStyle} >--- {title} ---</h3>
+  return <h3 onClick={onClickHandler} style={AccordionTitleStyle}>--- {title} ---</h3>
 }
