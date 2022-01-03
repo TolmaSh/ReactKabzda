@@ -1,24 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Rating} from "./components/Rating/Rating";
+import {Rating, starType} from "./components/Rating/Rating";
 import {Accordion} from "./components/Accordion/Accordion";
 import {Switch} from "./components/Switch/Switch";
-import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {UnControlledRating} from "./components/UncontrolledRating/ControlledRating";
+
 
 function App() {
+    // Rating
+    const [ratingValue, setRatingValue] = useState<starType>(1)
+    const onClickRatingHandler = (value: starType) => {
+        setRatingValue(value)
+    }
+    // ---  ---
+    // Accordion
+    const [collapsed, setCollapsed] = useState<boolean>(false)
+    const toggleAccordion = () => setCollapsed(!collapsed)
+
+    // --- ---
+    // On-Off
+    const [switchOpt, setSwitchOpt] = useState(false)
+
+
     return (
         <div className="App">
             <h1>I`m Title your App</h1>
-            <Rating defaultValue={4}/>
-            <Rating defaultValue={1}/>
-            <UncontrolledRating/>
-            <UncontrolledRating/>
+            <Rating starValue={ratingValue} onClickHandler={onClickRatingHandler}/>
             <hr/>
-            <Accordion title={'Menu'} />
+            <UnControlledRating value={4}/>
+            <UnControlledRating value={1}/>
             <hr/>
-            <Accordion title={'Users'} />
+            <Accordion title={'Menu'} collapsed={collapsed} toggleAccordion={toggleAccordion}/>
             <hr/>
-            <Switch/>
+            <Switch switchOpt={switchOpt} onChangeSwitch={setSwitchOpt}/>
         </div>
     );
 }

@@ -1,20 +1,21 @@
-import React, {SetStateAction, useState} from "react";
+import React from "react";
 import {Star} from "./Star/Star";
 
+export type starType = 0 | 1 | 2 | 3 | 4 | 5
+
 type RatingType = {
-    defaultValue: 0 | 1 | 2 | 3 | 4 | 5
+    onClickHandler: (value: starType) => void
+    starValue: starType
 }
 
-export const Rating: React.FC<RatingType> = ({ defaultValue}) => {
-    const [starValue, setStarValue] = useState( defaultValue )
-    const onClickHandler = (val: SetStateAction<0 | 1 | 2 | 3 | 4 | 5>) => {
-        setStarValue(val)
-    }
-  return  <ul>
-      <Star selected={starValue > 0}/><button onClick={() => onClickHandler(1)}>1</button>
-      <Star selected={starValue > 1}/><button onClick={() => onClickHandler(2)}>2</button>
-      <Star selected={starValue > 2}/><button onClick={() => onClickHandler(3)}>3</button>
-      <Star selected={starValue > 3}/><button onClick={() => onClickHandler(4)}>4</button>
-      <Star selected={starValue > 4}/><button onClick={() => onClickHandler(5)}>5</button>
+export const Rating: React.FC<RatingType> = ({ onClickHandler,starValue}) => {
+
+
+  return  <ul className='Rating'>
+      <Star selected={starValue > 0} onClick={() => onClickHandler(1)}/>
+      <Star selected={starValue > 1} onClick={() => onClickHandler(2)}/>
+      <Star selected={starValue > 2} onClick={() => onClickHandler(3)}/>
+      <Star selected={starValue > 3} onClick={() => onClickHandler(4)}/>
+      <Star selected={starValue > 4} onClick={() => onClickHandler(5)}/>
   </ul>
 }

@@ -1,8 +1,12 @@
 import React from "react";
 
-type StarType = {
+
+type StarPropsType = {
     selected: boolean
+    onClick: () => void
 }
-export const Star: React.FC<StarType> = ({selected}) => {
-    return selected ? <li><b>Star</b></li> : <li>Star</li>
+export const Star: React.FC<StarPropsType> = ({selected,  onClick}) => {
+    return <li onClick={onClick}>
+        {selected ? <b>Star </b> : "Star "}
+    </li>
 }

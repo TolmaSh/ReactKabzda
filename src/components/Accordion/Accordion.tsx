@@ -1,21 +1,16 @@
-import React, {useState} from "react";
+import React from "react";
 import {AccordionTitle} from "./AccordionTitle/AccordionTitle";
 import {AccordionBody} from "./AccordionBody/AccordionBody";
 
 type AccordionType = {
     title: string
+    collapsed: boolean
+    toggleAccordion: () => void
 }
-export const Accordion: React.FC<AccordionType> = ({title}) => {
-    const [collapsed, setCollapsed] = useState<boolean>(false)
-    const toogleAccordion = () => {
-        if ( !collapsed) {
-            setCollapsed(true)
-        } else {
-            setCollapsed(false)
-        }
-    }
+export const Accordion: React.FC<AccordionType> = ({title,collapsed,toggleAccordion}) => {
+
   return <div>
-      <AccordionTitle title={title} onClickHandler={toogleAccordion} />
+      <AccordionTitle title={title} onClickHandler={toggleAccordion} />
       {!collapsed && <AccordionBody />}
   </div>
 }

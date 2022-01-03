@@ -14,9 +14,15 @@ li {
     margin: 0;
     list-style: none;
 }
-.unControlledRating {
-    gap: 20px;
+hr {
+    width: 100%;
 }
-.unControlledRating > li {
+.UnControlledRating {
+    gap: 10px;
+}
+.UnControlledRating > li {
+    cursor: pointer;
+}
+.Rating > li {
     cursor: pointer;
 }
