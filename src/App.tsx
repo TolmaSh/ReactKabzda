@@ -4,6 +4,7 @@ import {Rating, starType} from "./components/Rating/Rating";
 import {Accordion} from "./components/Accordion/Accordion";
 import {Switch} from "./components/Switch/Switch";
 import {UnControlledRating} from "./components/UncontrolledRating/ControlledRating";
+import {MyInput} from "./components/MyInput/MyInput";
 
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
             <Accordion title={'Menu'} collapsed={collapsed} toggleAccordion={toggleAccordion}/>
             <hr/>
             <Switch switchOpt={switchOpt} onChangeSwitch={setSwitchOpt}/>
+            <hr/>
+            <MyInput/>
+            <hr/>
         </div>
     );
 }
