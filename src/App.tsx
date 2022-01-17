@@ -5,6 +5,7 @@ import {Accordion} from "./components/Accordion/Accordion";
 import {Switch} from "./components/Switch/Switch";
 import {UnControlledRating} from "./components/UncontrolledRating/ControlledRating";
 import {MyInput} from "./components/MyInput/MyInput";
+import MySelect from "./components/MySelect/MySelect";
 
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
             <Switch switchOpt={switchOpt} onChangeSwitch={setSwitchOpt}/>
             <hr/>
             <MyInput/>
+            <hr/>
+            <MySelect/>
             <hr/>
         </div>
     );
