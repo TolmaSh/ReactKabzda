@@ -26,3 +26,8 @@ hr {
 .Rating > li {
     cursor: pointer;
 }
+.AccordionBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

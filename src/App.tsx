@@ -8,6 +8,26 @@ import {MyInput} from "./components/MyInput/MyInput";
 import MySelect from "./components/MySelect/MySelect";
 
 
+
+export type DataType = {
+    id: number
+    value: string
+
+}
+const accordionData: DataType[] = [
+    {id: 1, value: "Viktor"},
+    {id: 2, value: "Alex"},
+    {id: 3, value: "Mike"},
+    {id: 4, value: "Vadym"}
+]
+const selectData: DataType[] = [
+    {id: 1, value: 'Kiev'},
+    {id: 2, value: 'Minsk'},
+    {id: 3, value: 'Moscow'},
+    {id: 4, value: 'London'},
+    {id: 5, value: 'Nevada'}
+]
+
 function App() {
     // Rating
     const [ratingValue, setRatingValue] = useState<starType>(1)
@@ -32,13 +52,13 @@ function App() {
             <UnControlledRating value={4}/>
             <UnControlledRating value={1}/>
             <hr/>
-            <Accordion title={'Menu'} collapsed={collapsed} toggleAccordion={toggleAccordion}/>
+            <Accordion title={'Menu'} collapsed={collapsed} data={accordionData} toggleAccordion={toggleAccordion}/>
             <hr/>
             <Switch switchOpt={switchOpt} onChangeSwitch={setSwitchOpt}/>
             <hr/>
             <MyInput/>
             <hr/>
-            <MySelect/>
+            <MySelect data={selectData} />
             <hr/>
         </div>
     );

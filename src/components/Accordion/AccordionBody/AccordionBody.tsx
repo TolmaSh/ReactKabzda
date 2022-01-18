@@ -1,9 +1,13 @@
 import React from "react";
+import {DataType} from "../../../App";
 
-export const AccordionBody = () => {
+type AccordionBodyPropsType = {
+    data: DataType[]
+}
+
+export const AccordionBody = ({data}: AccordionBodyPropsType) => {
   return <ul className="AccordionBody">
-      <li>One</li>
-      <li>Two</li>
-      <li>Three</li>
+      {data.map(t => <li key={t.id}>{t.value}</li>)}
   </ul>
+
 }

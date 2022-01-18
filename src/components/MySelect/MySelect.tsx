@@ -1,17 +1,24 @@
 import React, {ChangeEvent, useState} from 'react';
+import './MySelect.css'
+import {DataType} from "../../App";
 
-const MySelect = () => {
-    const [value,setValue] = useState('2')
+
+type MySelectPropsType = {
+   data: DataType[]
+}
+
+const MySelect = (props: MySelectPropsType) => {
+    const [value, setValue] = useState('2')
     const onChangeSelect = (e: ChangeEvent<HTMLSelectElement>) => {
-      setValue(e.currentTarget.value)
+        setValue(e.currentTarget.value)
     }
     return (
-        <select value={value} onChange={onChangeSelect}>
-            <option>None</option>
-            <option value={'1'}>Kiev</option>
-            <option value={'2'}>Moscow</option>
-            <option value={'3'}>Minsk</option>
-        </select>
+
+        <div className="box" >
+            <select value={value} onChange={onChangeSelect}>
+                {props.data.map(e => <option key={e.id} value={e.id}>{e.value}</option>)}
+            </select>
+        </div>
     );
 };
 
