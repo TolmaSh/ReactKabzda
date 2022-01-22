@@ -4,7 +4,18 @@ import {DataType} from "../../App";
 
 
 type MySelectPropsType = {
-   data: DataType[]
+    /**
+     * Select items
+     */
+    data: DataType[],
+    /**
+     * Color for select background
+     */
+    backgroundColor?: string
+    /**
+     * Color for select text
+     */
+    Color?: string
 }
 
 const MySelect = (props: MySelectPropsType) => {
@@ -14,8 +25,9 @@ const MySelect = (props: MySelectPropsType) => {
     }
     return (
 
-        <div className="box" >
-            <select value={value} onChange={onChangeSelect}>
+        <div className="box">
+            <select value={value} onChange={onChangeSelect}
+                    style={{backgroundColor: props.backgroundColor, color: props.Color}}>
                 {props.data.map(e => <option key={e.id} value={e.id}>{e.value}</option>)}
             </select>
         </div>

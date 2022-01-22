@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useRef, useState} from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
 import {MyInput} from "./MyInput";
 
 
@@ -35,7 +35,6 @@ export const SaveWithRefUnControlledInput = () => {
         </>
     );
 }
-
 export const SaveWithOnChangeUnControlledInput = () => {
     const [value, setValue] = useState<string>("")
     const onChangeValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -48,16 +47,6 @@ export const SaveWithOnChangeUnControlledInput = () => {
     );
 };
 
-// export const OnSwitch = Template.bind({})
-// OnSwitch.args = {
-//     switchOpt: true,
-//     toggleSwitch: x=>x
-// }
-// export const OffSwitch = Template.bind({})
-// OffSwitch.args = {
-//     switchOpt: false,
-//     toggleSwitch: x => x
-// }
 
 
 
