@@ -1,0 +1,8 @@
+.Rating {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+.Rating > li {
+    cursor: pointer;
+}

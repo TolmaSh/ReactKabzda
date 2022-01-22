@@ -49,12 +49,12 @@ function App() {
             <h1>I`m Title your App</h1>
             <Rating starValue={ratingValue} onClickHandler={onClickRatingHandler}/>
             <hr/>
-            <UnControlledRating value={4}/>
-            <UnControlledRating value={1}/>
+            {/*<UnControlledRating value={4}/>*/}
+            {/*<UnControlledRating value={1}/>*/}
             <hr/>
             <Accordion title={'Menu'} collapsed={collapsed} data={accordionData} toggleAccordion={toggleAccordion}/>
             <hr/>
-            <Switch switchOpt={switchOpt} onChangeSwitch={setSwitchOpt}/>
+            <Switch switchOpt={switchOpt} toggleSwitch={setSwitchOpt}/>
             <hr/>
             <MyInput/>
             <hr/>
