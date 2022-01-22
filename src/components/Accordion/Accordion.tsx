@@ -5,15 +5,20 @@ import {DataType} from "../../App";
 
 
 type AccordionType = {
-    title: string
+    title?: string
     collapsed: boolean
     toggleAccordion: () => void
     data: DataType[]
 }
-export const Accordion: React.FC<AccordionType> = ({title,collapsed,toggleAccordion,data}) => {
+export const Accordion: React.FC<AccordionType> = ({
+                                                       title = 'Default Title',
+                                                       collapsed,
+                                                       toggleAccordion,
+                                                       data
+                                                   }) => {
 
-  return <div>
-      <AccordionTitle title={title} onClickHandler={toggleAccordion} />
-      {!collapsed && <AccordionBody data={data} />}
-  </div>
+    return <div>
+        <AccordionTitle title={title} onClickHandler={toggleAccordion}/>
+        {!collapsed && <AccordionBody data={data} />}
+    </div>
 }
