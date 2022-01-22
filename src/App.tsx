@@ -3,7 +3,6 @@ import './App.css';
 import {Rating, starType} from "./components/Rating/Rating";
 import {Accordion} from "./components/Accordion/Accordion";
 import {Switch} from "./components/Switch/Switch";
-import {UnControlledRating} from "./components/UncontrolledRating/ControlledRating";
 import {MyInput} from "./components/MyInput/MyInput";
 import MySelect from "./components/MySelect/MySelect";
 
@@ -44,6 +43,7 @@ function App() {
     const [switchOpt, setSwitchOpt] = useState(false)
 
 
+
     return (
         <div className="App">
             <h1>I`m Title your App</h1>
@@ -56,7 +56,7 @@ function App() {
             <hr/>
             <Switch switchOpt={switchOpt} toggleSwitch={setSwitchOpt}/>
             <hr/>
-            <MyInput/>
+            <MyInput defaultValue={"UnControlled Input"}  />
             <hr/>
             <MySelect data={selectData} />
             <hr/>
