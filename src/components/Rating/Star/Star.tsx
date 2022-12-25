@@ -8,6 +8,6 @@ type StarPropsType = {
 }
 export const Star: React.FC<StarPropsType> = ({selected,  onClick,starColor}) => {
     return <li onClick={onClick} style={{color: starColor}}>
-        {selected ? <b>Star </b> : "Star "}
+        {selected ? <b>Star </b> :  "Star "}
     </li>
 }
