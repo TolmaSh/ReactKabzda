@@ -1,13 +1,29 @@
 import React from "react";
-import {DataType} from "../../../App";
+import {accordionReducerType} from '../AccordionReducer';
 
 type AccordionBodyPropsType = {
-    data: DataType[]
+    data: accordionReducerType[]
+    incrementAge: (id:number) => void
+    decrementAge: (id:number) => void
 }
 
-export const AccordionBody = ({data}: AccordionBodyPropsType) => {
+export const AccordionBody = ({data,incrementAge,decrementAge}: AccordionBodyPropsType) => {
+
   return <ul className="AccordionBody">
-      {data.map(t => <li key={t.id}>{t.value}</li>)}
+      {data.map(t => {
+          const incrementOnClickHanlder = () => {
+              incrementAge(t.id)
+          }
+          const decrementOnClickHanlder = () => {
+              decrementAge(t.id)
+          }
+        return <li key={t.id}>
+            {t.value},
+            age:{t.age}
+            <button onClick={incrementOnClickHanlder}>+</button>
+            <button onClick={decrementOnClickHanlder}>-</button>
+        </li>
+      })}
   </ul>
 
 }

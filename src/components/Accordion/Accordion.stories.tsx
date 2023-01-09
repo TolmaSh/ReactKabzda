@@ -13,10 +13,10 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const AccordionData = [
-    {id: 1, value: "Viktor"},
-    {id: 2, value: "Alex"},
-    {id: 3, value: "Mike"},
-    {id: 4, value: "Vadym"}
+    {id: 1, value: "Viktor",age: 18},
+    {id: 2, value: "Alex",age: 29},
+    {id: 3, value: "Mike",age: 10},
+    {id: 4, value: "Vadym",age: 60}
 ]
 
 export const ToggleModeAccordion: ComponentStory<typeof Accordion> = (args) => {
